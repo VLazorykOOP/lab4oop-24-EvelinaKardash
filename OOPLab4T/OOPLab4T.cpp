@@ -3,52 +3,54 @@
 
 class VectorLong {
 private:
-    long *ptr;
-    int size;
-    int codeError;
+    long *ptr; // вказівник на динамічний масив цілих чисел
+    int size; // розмір вектора
+    int codeError; // змінна стану для коду помилки
 
 public:
+    // Конструктор без параметрів
     VectorLong() {
         size = 1;
-        ptr = new long[size];
-        ptr[0] = 0;
+        ptr = new long[size]; // виділення пам'яті для одного елемента
+        ptr[0] = 0; // ініціалізація значенням нуль
         codeError = 0;
     }
 
+// Конструктор з одним параметром - розмір вектора
     explicit VectorLong(int s) {
         size = s;
-        ptr = new long[size];
+        ptr = new long[size]; // виділення пам'яті для s елементів
         for (int i = 0; i < size; ++i)
-            ptr[i] = 0;
+            ptr[i] = 0; // ініціалізація всіх елементів значенням нуль
         codeError = 0;
     }
-
+    // Конструктор з двома параметрами - розмір вектора і значення ініціалізації
     VectorLong(int s, long initValue) {
         size = s;
-        ptr = new long[size];
+        ptr = new long[size]; // виділення пам'яті для s елементів
         for (int i = 0; i < size; ++i)
-            ptr[i] = initValue;
+            ptr[i] = initValue; // ініціалізація всіх елементів значенням initValue
         codeError = 0;
     }
 
-
+// Конструктор копіювання
     VectorLong(const VectorLong &vec) {
         size = vec.size;
-        ptr = new long[size];
+        ptr = new long[size]; // виділення пам'яті для копіювання значень
         for (int i = 0; i < size; ++i)
-            ptr[i] = vec.ptr[i];
+            ptr[i] = vec.ptr[i]; // копіювання значень з іншого вектора
         codeError = vec.codeError;
     }
 
-
+    // Деструктор
     ~VectorLong() {
-        delete[] ptr;
+        delete[] ptr; // звільнення пам'яті, виділеної для масиву
     }
 
-
+// Префіксний та постфіксний оператори ++ та --
     VectorLong &operator++() {
         for (int i = 0; i < size; ++i)
-            ++ptr[i];
+            ++ptr[i]; // збільшення кожного елемента на 1
         return *this;
     }
 
@@ -60,7 +62,7 @@ public:
 
     VectorLong &operator--() {
         for (int i = 0; i < size; ++i)
-            --ptr[i];
+            --ptr[i]; // зменшення кожного елемента на 1
         return *this;
     }
 
@@ -70,7 +72,7 @@ public:
         return temp;
     }
 
-
+    // Унарний логічний !
     bool operator!() const {
         return size == 0;
     }
@@ -129,7 +131,7 @@ public:
         if (scalar != 0) {
             for (int i = 0; i < size; ++i)
                 ptr[i] /= scalar;
-        } else {// Division by zero error
+        } else {
         }
         return *this;
     }

@@ -55,6 +55,12 @@ build CMakeFiles/untitled.dir/OOPLab4T.cpp.o: CXX_COMPILER__untitled_unscanned_D
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
+build CMakeFiles/untitled.dir/task_2.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/eveline/CLionProjects/Lab/lab3oop-24-EvelinaKardash/OOPLab3Tpl/lab4oop-24-EvelinaKardash/OOPLab4T/task_2.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles/untitled.dir/task_2.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -63,7 +69,7 @@ build CMakeFiles/untitled.dir/OOPLab4T.cpp.o: CXX_COMPILER__untitled_unscanned_D
 #############################################
 # Link the executable untitled
 
-build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/OOPLab4T.cpp.o
+build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/OOPLab4T.cpp.o CMakeFiles/untitled.dir/task_2.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :

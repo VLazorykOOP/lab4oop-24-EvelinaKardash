@@ -3,4 +3,5 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(untitled OOPLab4T.cpp)
+add_executable(untitled OOPLab4T.cpp
+        task_2.cpp)
