@@ -297,11 +297,30 @@ std::ostream &operator<<(std::ostream &os, const VectorLong &vec) {
 }
 
 int main() {
-// Тестування класу VectorLong
-    VectorLong vec1(3, 5); // Вектор розміром 3 з усіма елементами, ініціалізованими значенням 5
-    VectorLong vec2(3); // Вектор розміром 3 з усіма елементами, ініціалізованими значенням 0
-    vec2 = vec1 + static_cast<const VectorLong>(3); // Додавання скаляра 3 до кожного елемента vec1 та збереження в vec2
-    std::cout << vec2 << std::endl; // Виведення: 5 5 5
+    // Створення об'єкту вектора з розміром 5 та значеннями за замовчуванням
+    VectorLong vec1(5);
+
+    // Введення значень для вектора з клавіатури
+    std::cout << "Enter values for vector vec1:" << std::endl;
+    std::cin >> vec1;
+
+    // Виведення значень вектора
+    std::cout << "Vector vec1: " << vec1 << std::endl;
+
+    // Збільшення значень вектора на 1 та виведення результату
+    std::cout << "Vector vec1 after incrementing: " << ++vec1 << std::endl;
+
+    // Множення значень вектора на 2 та виведення результату
+    std::cout << "Vector vec1 multiplied by 2: " << vec1 * 2 << std::endl;
+
+    // Створення другого вектора та присвоєння його значень першому
+    VectorLong vec2(5);
+    std::cout << "Enter values for vector vec2:" << std::endl;
+    std::cin >> vec2;
+    vec1 = vec2;
+
+    // Порівняння двох векторів та виведення результату
+    std::cout << "Are vec1 and vec2 equal? " << (vec1 == vec2 ? "Yes" : "No") << std::endl;
 
     return 0;
 }
